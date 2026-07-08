@@ -15,7 +15,7 @@ var romanToInt = function(s) {
     )
 let num =s.split("")
 let sum = 0
-num.forEach((x,i,arr)=>{
+num.map((x,i,arr)=>{
     let next = roman.get(arr[i+1]) || 0
     let current = roman.get(x)
     if(current < next){
