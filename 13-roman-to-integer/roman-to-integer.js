@@ -3,28 +3,26 @@
  * @return {number}
  */
 var romanToInt = function(s) {
-    const roman = new Map([
- ["I",1],
-["V",5],
-["X",10],
-["L",50],
-["C", 100],
-["D",500],
-["M",1000]
-    ]
-    )
-let num =s.split("")
+ const roman = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+};
 let sum = 0
-num.map((x,i,arr)=>{
-    let next = roman.get(arr[i+1]) || 0
-    let current = roman.get(x)
-    if(current < next){
+for(let i =0;i<s.length;i++){
+    let current = roman[s[i]]
+    let next = roman[s[i+1]]
+    if(current<next){
         sum -=current
     }
     else{
-        sum +=current
-    }
+        sum+=current
 
-})
+    }
+}
  return sum;
 }
