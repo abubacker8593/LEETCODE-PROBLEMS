@@ -15,14 +15,8 @@ var romanToInt = function(s) {
     )
 let num =s.split("")
 let sum = 0
-num.map((x,i,arr)=>{
-    
-             roman.get(x)<roman.get(arr[i+1]) ? sum-=roman.get(x) : sum+=roman.get(x)
-        
-        
-       
-    
-   
+num.forEach((x,i,arr)=>{
+roman.get(x)<(roman.get(arr[i+1])==undefined ? 0: roman.get(arr[i+1])) ?  sum-=roman.get(x) : sum+=roman.get(x)
 })
  return sum;
 }
