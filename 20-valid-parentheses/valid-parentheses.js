@@ -9,7 +9,6 @@ var isValid = function(s) {
         '}': '{',
         ']': '['
     };
-
     for (let ch of s) {
         if (ch === '(' || ch === '{' || ch === '[') {
             stack.push(ch);
